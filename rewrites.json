@@ -1,0 +1,44 @@
+[
+{
+  "from": "style/*",
+  "to": "/style/*"
+},
+{
+  "from": "vendor/*",
+  "to": "/vendor/*"
+},
+{
+  "from": "script/*",
+  "to": "/script/*"
+},
+{
+  "from": "_views/*",
+  "to": "../../../_views/*",
+  "query" : {
+    "descending" : true,
+    "limit" : 5,
+    "front" : true
+  }
+},
+{
+  "from" : "_utils/*",
+  "to" : "../../../_utils/*"
+},
+{
+  "from": "nothingbetweenus/*",
+  "to": "../../../nothingbetweenus/*"
+},
+{
+  "from": "/",
+  "to": "index.html"
+  
+},
+{
+  "from": "",
+  "to": "index.html"
+},
+{
+  "from": "*",
+  "to": "*"
+}
+]
