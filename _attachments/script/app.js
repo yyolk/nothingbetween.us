@@ -21,7 +21,7 @@ $(function() {
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
-            limit : 50,
+            limit : 2000,
             update_seq : true,
             success : function(data) {
                 setupChanges(data.update_seq);
@@ -33,12 +33,27 @@ $(function() {
         });
     };
     drawItems();
+    function drawLatest() {
+        db.view("nothingbetweenus/recent-items", {
+            descending : "true",
+            limit : 10,
+            update_seq : true,
+            success : function(data) {
+                setupChanges(data.update_seq);
+                var them = $.mustache($("#recent-messages").html(),{
+                    items : data.rows.map(function(r) {return r.value;})
+
+                });
+                $("#content").html(them);
+            }
+        });
+    }
     var changesRunning = false;
     function setupChanges(since) {
         if (!changesRunning) {
             var changeHandler = db.changes(since);
             changesRunning = true;
-            changeHandler.onChange(drawItems);
+            changeHandler.onChange(drawLatest);
         }
     }
     function randomColor(){
@@ -207,7 +222,7 @@ $(function() {
         return borders[Math.floor(Math.random()*borders.length)];
     }
     function createStyle() {
-        return "background-color:"+randomColor() + ";border:"+Math.floor(Math.random()*12+4)+"px "+ randomBorderStyle() + " "+randomColor();
+        return "background-color:"+randomColor() + ";border:"+Math.floor(Math.random()*12+4)+"px "+ randomBorderStyle() + " "+randomColor()+ ";";
     }
     var style = "";
     function styleEntry() {
