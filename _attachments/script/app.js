@@ -53,7 +53,7 @@ $(function() {
         if (!changesRunning) {
             var changeHandler = db.changes(since);
             changesRunning = true;
-            changeHandler.onChange(drawLatest);
+            changeHandler.onChange(drawItems);
         }
     }
     function randomColor(){
