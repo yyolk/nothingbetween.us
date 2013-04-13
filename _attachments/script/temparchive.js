@@ -21,7 +21,7 @@ $(function() {
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
-            limit : 50,
+            limit : 2000,
             update_seq : true,
             success : function(data) {
                 setupChanges(data.update_seq);
@@ -242,7 +242,6 @@ $(function() {
                 success : function() {
                     form.reset();
                     styleEntry();
-                    _gaq.push(['_trackEvent', 'Growth', 'Grow', '+1']);
                 },
                 error : function() { alert("This has already been written."); }
 
