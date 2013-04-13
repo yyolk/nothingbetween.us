@@ -21,7 +21,7 @@ $(function() {
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
-            limit : 2000,
+            limit : 200,
             update_seq : true,
             success : function(data) {
                 setupChanges(data.update_seq);
@@ -237,7 +237,7 @@ $(function() {
         doc._id = hex_md5(doc.message);
         doc.style = style;
         doc.created_at = new Date();
-        if (doc.message.length < 257){
+        if (doc.message.length < 1025){
             db.saveDoc(doc, {
                 success : function() {
                     form.reset();
