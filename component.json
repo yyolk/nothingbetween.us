@@ -1,0 +1,13 @@
+{
+  "name": "nothingbetweenus",
+  "repo": "yyolk/nothingbetweenus",
+  "description": "NOTHINGBETWEEN.US",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "ianstormtaylor/meyer-reset":"*",
+    "pazguille/editable":"*"
+    },
+  "development": {},
+  "license": "MIT"
+}

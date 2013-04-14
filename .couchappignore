@@ -4,4 +4,11 @@
   // ".*~$"
   // ".*\\.swp$"
   // ".*\\.bak$"
+  
+  ".DS_Store",
+  "README.md",
+  "component.json",
+  "Makefile",
+  "History.md",
+  "components"
 ]

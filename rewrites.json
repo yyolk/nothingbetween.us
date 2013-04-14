@@ -12,6 +12,10 @@
   "to": "/script/*"
 },
 {
+  "from": "build/*",
+  "to": "/build/*"
+},
+{
   "from": "_views/",
   "to": "../../../_views/",
   "query" : {
