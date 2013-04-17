@@ -9,6 +9,8 @@
     <meta property="og:url" content="http://nothingbetween.us">
     <meta property="og:image" content="http://nothingbetween.us/nbu.png">
     <meta property="og:description" content="NOTHINGBETWEEN.US">
+    <style type="text/css">
+    </style>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -25,11 +27,13 @@
   </head>
   <body>
 
+    
+
     <div id="entry"></div>
     <div id="nav">
-      <p>This page only shows the last 50 entries <em>In Real Time</em>.</p>
-      <p><a href="/tempArchive.html">Go to the temporary archive</a>.</p>
-      </div>
+      <p>This page only shows the last few entries in real-time. <a href="/tempArchive.html">Go to the temporary archive</a>.</p>
+      <p></p>
+    </div>
     <div id="content"></div>
     
 
@@ -58,15 +62,13 @@
           {{#items}}
             <div onclick="location.href='http://nothingbetween.us/p/{{{id}}}'" style="{{{style}}}">
               <p>{{message}}</p>
-            </div>
+              <iframe class="fb-like" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnothingbetween.us%2Fp%2F{{{id}}}&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=184836661670371" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+
+              </div>
           {{/items}}
         </div>
   </script>
   <script src="build/build.js"></script>
   <script src="script/app.js"></script>
-  <script>
-    setTimeout(function() {
-        $('#nav').slideUp('slow');
-    }, 6000);
-  </script>
+
 </html>
