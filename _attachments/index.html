@@ -61,14 +61,11 @@
         <div id="items">
           {{#items}}
             <div onclick="location.href='http://nothingbetween.us/p/{{{id}}}'" style="{{{style}}}">
-              <p>{{message}}</p>
-              <iframe class="fb-like" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnothingbetween.us%2Fp%2F{{{id}}}&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=184836661670371" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
-
-              </div>
+              <p class="message" style="font-size:200%;">{{message}}</p
+              <p>click to like and view rendered post</p>
+            </div>
           {{/items}}
         </div>
   </script>
-  <script src="build/build.js"></script>
   <script src="script/app.js"></script>
-
 </html>
