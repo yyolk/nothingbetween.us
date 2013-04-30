@@ -18,39 +18,21 @@ $(function() {
     };
 
     var db = $.couch.db("nothingbetweenus");
-    function checkImg(text){
-      return RegExp(/\.(gif|jpg|jpeg|tiff|png)$/i).test(text) ? '<img src="'+text+'" />' : text;
-    }
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
             limit : 30,
             update_seq : true,
             success : function(data) {
-                var fitems = data.rows.map(function(r) { return r.value;});
-                fitems.message = checkImg(fitems.message);
                 var them = $.mustache($("#recent-messages").html(), {
-                    items : fitems
+                    items : data.rows.map(function(r) { return r.value;})
                 });
                 $("#content").html(them);
             }
         });
     };
     drawItems();
-    function drawLatest() {
-        db.view("nothingbetweenus/recent-items", {
-            descending : "true",
-            limit : 10,
-            update_seq : true,
-            success : function(data) {
-                setupChanges(data.update_seq);
-                var them = $.mustache($("#recent-messages").html(),{
-                    items : data.rows.map(function(r) {return r.value;})
-                });
-                $("#content").html(them);
-            }
-        });
-    }
+
     var changesRunning = false;
     function setupChanges(since) {
         if (!changesRunning) {
@@ -240,7 +222,6 @@ $(function() {
         doc._id = hex_md5(doc.message);
         doc.style = style;
         doc.created_at = new Date();
-        doc.message = checkImg(doc.message);
         if (doc.message.length < 1025){
             db.saveDoc(doc, {
                 success : function() {
