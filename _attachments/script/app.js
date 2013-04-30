@@ -21,18 +21,33 @@ $(function() {
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
-            limit : 30,
+            limit : 10,
             update_seq : true,
             success : function(data) {
+                setupChanges(data.update_seq);
                 var them = $.mustache($("#recent-messages").html(), {
-                    items : data.rows.map(function(r) { return r.value;})
+                    items : data.rows.map(function(r) {return r.value;})
                 });
                 $("#content").html(them);
             }
         });
     };
     drawItems();
+    function drawLatest() {
+        db.view("nothingbetweenus/recent-items", {
+            descending : "true",
+            limit : 10,
+            update_seq : true,
+            success : function(data) {
+                setupChanges(data.update_seq);
+                var them = $.mustache($("#recent-messages").html(),{
+                    items : data.rows.map(function(r) {return r.value;})
 
+                });
+                $("#content").html(them);
+            }
+        });
+    }
     var changesRunning = false;
     function setupChanges(since) {
         if (!changesRunning) {
