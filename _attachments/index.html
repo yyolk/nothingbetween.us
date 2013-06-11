@@ -32,7 +32,7 @@
     <div id="entry"></div>
     <div id="nav">
       <p>This page only shows the last few entries in real-time. <a href="/tempArchive.html">Go to the temporary archive</a>.</p>
-      <p></p>
+      <p><em>click to like and view rendered post</em></p>
     </div>
     <div id="content"></div>
     
@@ -61,8 +61,7 @@
         <div id="items">
           {{#items}}
             <div onclick="location.href='http://nothingbetween.us/p/{{{id}}}'" style="{{{style}}}">
-              <p class="message" style="font-size:200%;">{{message}}</p
-              <p>click to like and view rendered post</p>
+              <p class="message" style="font-size:200%;">{{message}}</p>
             </div>
           {{/items}}
         </div>
