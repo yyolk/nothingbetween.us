@@ -242,7 +242,8 @@ $(function() {
             db.saveDoc(doc, {
                 success : function() {
                     form.reset();
-                    styleEntry();
+                    // keep the style so continuous messages from the same person are the same (with the option to randomize it with button)
+                    //styleEntry();
                     _gaq.push(['_trackEvent', 'Growth', 'Grow', '+1']);
                 },
                 error : function() { alert("This has already been written."); }
