@@ -31,8 +31,9 @@
 
     <div id="entry"></div>
     <div id="nav">
-      <p>This page only shows the last few entries in real-time. <a href="/tempArchive.html">Go to the temporary archive</a>.</p>
-      <p><em>click to like and view rendered post</em></p>
+      <p>This page only shows the last few entries in real-time. New messages appear at the top.</p>
+      <p><em>click to like and view rendered post.</em></p>
+      <p><a href="/tempArchive.html">Go to the temporary archive</a></p>
     </div>
     <div id="content"></div>
     
@@ -50,7 +51,7 @@
 <!-- templates used by app.js -->
   <script id="new-message" type="text/x-mustache" charset="utf-8">
       <form id="create-message">
-          <input type="text" maxlength="1024" placeholder="Type up to one thousand twenty-four unique characters then hit enter." name="message" size="60" value="">
+          <input type="text" maxlength="1024" placeholder="Type up to one thousand twenty-four characters then hit enter." name="message" size="60" value="">
       </form>
       <form id="new-style">
         <input type="button" value="Randomize Style" id="randomize">
@@ -61,10 +62,15 @@
         <div id="items">
           {{#items}}
             <div onclick="location.href='http://nothingbetween.us/p/{{{id}}}'" style="{{{style}}}">
-              <p class="message" style="font-size:200%;">{{message}}</p>
+              <p class="message" style="font-size:120%">{{message}}</p>
             </div>
           {{/items}}
         </div>
   </script>
   <script src="script/app.js"></script>
+  <script>
+    $(function(){
+      setTimeout("$('#nav').slideUp()", 9000);
+    });
+  </script>
 </html>

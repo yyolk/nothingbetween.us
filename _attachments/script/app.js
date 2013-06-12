@@ -21,7 +21,7 @@ $(function() {
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
-            limit : 10,
+            limit : 20,
             update_seq : true,
             success : function(data) {
                 setupChanges(data.update_seq);
@@ -222,7 +222,7 @@ $(function() {
         return borders[Math.floor(Math.random()*borders.length)];
     }
     function createStyle() {
-        return "background-color:"+randomColor() + ";border:"+Math.floor(Math.random()*12+4)+"px "+ randomBorderStyle() + " "+randomColor()+ ";";
+        return "background-color:"+randomColor() + ";border:"+Math.floor(Math.random()*2+3)+"px "+ randomBorderStyle() + " "+randomColor()+ ";";
     }
     var style = "";
     function styleEntry() {

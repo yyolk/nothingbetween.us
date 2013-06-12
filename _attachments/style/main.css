@@ -43,7 +43,7 @@ body {
 }
 #items *{
   text-align: justify;
-  padding:20px 10px;margin:0;
+  padding:5px 10px;margin:0;
   word-wrap: break-word;
   cursor:pointer;
 }
