@@ -4,7 +4,8 @@ function(doc) {
       emit(doc.created_at, {
           message: doc.message,
           id:doc._id,
-          style:doc.style
+          style:doc.style,
+          image:doc.image
       });
   }
 };

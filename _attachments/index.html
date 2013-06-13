@@ -62,7 +62,14 @@
         <div id="items">
           {{#items}}
             <div onclick="location.href='http://nothingbetween.us/p/{{{id}}}'" style="{{{style}}}">
-              <p class="message" style="font-size:120%">{{message}}</p>
+              <p class="message" style="font-size:120%">
+                {{#image}}
+                  <img src="{{image}}">
+                {{/image}}
+                {{^image}}
+                  {{message}}
+                {{/image}}
+              </p>
             </div>
           {{/items}}
         </div>

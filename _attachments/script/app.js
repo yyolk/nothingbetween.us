@@ -16,6 +16,14 @@ $(function() {
         });
         return o;
     };
+    function checkImg(str){
+    var pattern = new RegExp(/\.(gif|jpg|jpeg|tiff|png)$/i);
+    if (pattern.test(str)){
+      return true;
+    }else{
+      return false;
+    }
+    }
 
     var db = $.couch.db("nothingbetweenus");
     function drawItems() {
@@ -237,6 +245,9 @@ $(function() {
         // doc._id = hex_md5(doc.message);
         doc.style = style;
         doc.created_at = new Date();
+        if(checkImg(doc.message)){
+          doc.image = doc.message;
+        }
         if (doc.message.length < 1025){
             db.saveDoc(doc, {
                 success : function() {

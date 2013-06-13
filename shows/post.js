@@ -5,6 +5,10 @@ function(doc, req) {
   } else {
     shortdescript = doc.message;
   }
+  if (doc.image){
+    doc.message = "<div style='position:fixed;top:20%;left:5%;text-align:center;display:block;'><img src='"+doc.image+"'></div>"
+  }
+
 
   ogdata = '<meta property="og:title" content="NOTHINGBETWEEN.US">' +
     '<meta property="og:type" content="website">' +
