@@ -235,7 +235,6 @@ $(function() {
         e.preventDefault();
         var form = this, doc = $(form).serializeObject();
         // doc._id = hex_md5(doc.message);
-        // doc._id = hex_md5(new Date);
         doc.style = style;
         doc.created_at = new Date();
         if (doc.message.length < 1025){
