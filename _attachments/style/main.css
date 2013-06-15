@@ -410,15 +410,11 @@ body {
   background-color: black;
   width:100%;
 }
-#content{
-  margin-top:110px;
-}
 
 
 #entry {
   margin-bottom:20px;
   padding:20px 0;
-  position:fixed;
 }
 
 #entry form{
@@ -453,7 +449,20 @@ img{
 
 @media (min-device-width : 1px) { 
   *{zoom:130%;}
+  #entry{
+    position:fixed;
+  }
+  #content{
+  margin-top:110px;
+  }
+
 }
 @media (min-device-width : 640px) { 
   *{zoom:100%;}
+  #entry{
+    position:inherit;
+  }
+  #content{
+    margin-top: 0;
+  }
 }
