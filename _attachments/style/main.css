@@ -451,9 +451,13 @@ img{
   *{zoom:130%;}
   #entry{
     position:fixed;
+    top:0;
+  }
+  #nav{
+    visibility:hidden;
   }
   #content{
-  margin-top:110px;
+    margin-top:150px;
   }
 
 }
@@ -461,6 +465,9 @@ img{
   *{zoom:100%;}
   #entry{
     position:inherit;
+  }
+  #nav{
+    visibility: visible;
   }
   #content{
     margin-top: 0;
