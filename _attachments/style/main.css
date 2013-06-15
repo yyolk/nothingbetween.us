@@ -442,7 +442,7 @@ body {
   word-wrap: break-word;
   cursor:pointer;
 }
-#items img{
+img{
   max-width:90%;
 }
 
