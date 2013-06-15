@@ -459,7 +459,9 @@ img{
   #content{
     margin-top:150px;
   }
-
+  .fb-like{
+    visibility: hidden;
+  }
 }
 @media (min-device-width : 640px) { 
   *{zoom:100%;}
@@ -472,4 +474,8 @@ img{
   #content{
     margin-top: 0;
   }
+  .fb-like{
+    visibility: visible;
+  }
+
 }
