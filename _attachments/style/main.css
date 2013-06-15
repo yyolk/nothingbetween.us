@@ -454,7 +454,7 @@ img{
     top:0;
   }
   #nav{
-    visibility:hidden;
+    display: none;
   }
   #content{
     margin-top:150px;
@@ -467,7 +467,7 @@ img{
     position:inherit;
   }
   #nav{
-    visibility: visible;
+    display: block;
   }
   #content{
     margin-top: 0;
