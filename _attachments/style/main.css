@@ -447,5 +447,15 @@ img{
 }
 
 
-@media (min-device-width : 1px) { *{zoom:130%;}}
-@media (min-device-width : 640px) { *{zoom:100%;}}
+@media (min-device-width : 1px) { 
+  *{zoom:130%;}
+  #entry{
+    position:fixed;
+  }
+}
+@media (min-device-width : 640px) { 
+  *{zoom:100%;}
+  #entry{
+    position:inherit;
+  }
+}

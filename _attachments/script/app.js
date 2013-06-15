@@ -29,7 +29,7 @@ $(function() {
     function drawItems() {
         db.view("nothingbetweenus/recent-items", {
             descending : "true",
-            limit : 20,
+            limit : 77,
             update_seq : true,
             success : function(data) {
                 setupChanges(data.update_seq);
