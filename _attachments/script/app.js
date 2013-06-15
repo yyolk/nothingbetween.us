@@ -229,13 +229,20 @@ $(function() {
         ];
         return borders[Math.floor(Math.random()*borders.length)];
     }
-    function createStyle() {
-        return "background-color:"+randomColor() + ";border:"+Math.floor(Math.random()*2+3)+"px "+ randomBorderStyle() + " "+randomColor()+ ";";
-    }
     var style = "";
+    function createStyle() {
+        style = "background-color:"+randomColor() + ";border:"+Math.floor(Math.random()*2+3)+"px "+ randomBorderStyle() + " "+randomColor()+ ";";
+        styleEntry();
+    }
+    if (!sessionStorage['style']) {
+      sessionStorage['style'] = createStyle();
+    } else {
+      style = sessionStorage['style'];
+    }
+
     function styleEntry() {
-        style = createStyle();
-        $("#entry").attr("style", style);
+      sessionStorage['style'] = style;
+      $("#entry").attr("style", style);
     }
     styleEntry();
     $("#entry").html($.mustache($("#new-message").html()));
@@ -265,7 +272,7 @@ $(function() {
         return false;
     }).find("input").focus();
     $("#new-style #randomize").click(function(e){
-        styleEntry();
+        createStyle();
     });
 
 
