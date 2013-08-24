@@ -2,12 +2,15 @@
 <html>
   <head>
     <title>NOTHINGBETWEEN.US</title>
+    <link rel="stylesheet" href="build/build.css" type="text/css">
     <link rel="stylesheet" href="style/main.css" type="text/css">
     <meta property="og:title" content="NOTHINGBETWEEN.US">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://nothingbetween.us">
     <meta property="og:image" content="http://nothingbetween.us/nbu.png">
     <meta property="og:description" content="NOTHINGBETWEEN.US">
+    <style type="text/css">
+    </style>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -24,8 +27,17 @@
   </head>
   <body>
 
-    <div id="content"></div>
     
+
+    <div id="entry"></div>
+    <div id="nav">
+      <p>This page only shows the last few entries in real-time. New messages appear at the top.</p>
+      <p><em>click to like and view rendered post.</em></p>
+    </div>
+    <div id="content"></div>
+    <div style="background-color:white;">
+      <p><a href="/tempArchive.html">Go to the temporary archive</a></p>
+    </div>
 
   </body>
   <script src="vendor/iriscouch/sha1.js"></script>
@@ -40,7 +52,7 @@
 <!-- templates used by app.js -->
   <script id="new-message" type="text/x-mustache" charset="utf-8">
       <form id="create-message">
-          <input type="text" maxlength="1024" placeholder="Type up to one thousand twenty-four unique characters then hit enter." name="message" size="60" value="">
+          <input type="text" maxlength="1024" placeholder="Type up to one thousand twenty-four characters then hit enter." name="message" size="60" value="">
       </form>
       <form id="new-style">
         <input type="button" value="Randomize Style" id="randomize">
@@ -51,11 +63,22 @@
         <div id="items">
           {{#items}}
             <div onclick="location.href='http://nothingbetween.us/p/{{{id}}}'" style="{{{style}}}">
-              <p>{{message}}</p>
+              <p class="message" style="font-size:120%">
+                {{#image}}
+                  <img src="{{image}}">
+                {{/image}}
+                {{^image}}
+                  {{message}}
+                {{/image}}
+              </p>
             </div>
           {{/items}}
         </div>
   </script>
-  <script src="script/temparchive.js"></script>
-
+  <script src="script/app.js"></script>
+  <script>
+    $(function(){
+      setTimeout("$('#nav').slideUp()", 9000);
+    });
+  </script>
 </html>
