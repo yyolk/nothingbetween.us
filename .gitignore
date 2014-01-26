@@ -1,3 +1,4 @@
 .couchapprc
 build
 components
+venv
