@@ -10,5 +10,6 @@
   "component.json",
   "Makefile",
   "History.md",
+  "venv",
   "components"
 ]
