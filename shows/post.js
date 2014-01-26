@@ -30,7 +30,7 @@ function(doc, req) {
       '<link rel="stylesheet" href="/style/main.css" type="text/css"></link>'+
       '<script src="/script/analytics.js"></script>'+
       '</head>'+
-      '<body onclick="location.href='+"'http://nothingbetween.us'"+';" style="cursor:pointer;'+doc.style+'">'+
+      '<body onclick="location.href='+"'https://yolkyolk.iriscouch.com/nothingbetweenus/_design/nothingbetweenus/index.html'"+';" style="cursor:pointer;'+doc.style+'">'+
       '<div style="position:absolute;left:50%;top:50%;">'+
       '<div style="position:relative;top:-50%;left:-50%;">'+
       doc.message+
