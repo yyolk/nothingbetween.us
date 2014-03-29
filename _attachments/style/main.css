@@ -411,6 +411,13 @@ body {
   width:100%;
 }
 
+a, a:hover, a:link, a:visited {
+  color: deeppink;
+}
+a:active {
+  color: red;
+}
+
 
 #entry {
   margin-bottom:20px;

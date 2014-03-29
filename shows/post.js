@@ -33,7 +33,7 @@ function(doc, req) {
       '<body onclick="location.href='+"'http://nothingbetween.us/'"+';" style="cursor:pointer;box-sizing:border-box;'+doc.style+'">'+
       // '<body style="'+doc.style+'">'+
       '<div style="position:absolute;left:50%;top:50%;">'+
-      '<div style="position:relative;top:-50%;left:-50%;">'+
+      '<div style="position:relative;top:-50%;left:-50%;font-size:5vw;">'+
       doc.message+
       '</div>'+
       '</div>'+

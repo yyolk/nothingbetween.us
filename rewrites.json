@@ -38,6 +38,10 @@
   "to": "_show/post/*"
 },
 {
+  "from": "/img/*",
+  "to": "_show/image/*"
+},
+{
   "from": "*",
   "to": "*"
 }
